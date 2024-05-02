@@ -26,7 +26,7 @@ function fetchDataAJax() {
         },
       ],
       temperature: 0.7,
-      max_tokens: 200,
+      max_tokens: 100,
       top_p: 1,
     }),
     success: function (data) {
