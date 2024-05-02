@@ -1,0 +1,104 @@
+h1 {
+  text-align: center;
+  font-size: 300%;
+}
+#head{
+  font-family: cursive;;
+}
+#gen {
+  font-family: cursive;
+  color: #333;
+  padding: 10px 50px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.5s;
+  display: block;
+  margin: auto;
+  width: auto;
+  height: auto;
+}
+h4 {
+  font-family: cursive;
+  text-align: center;
+}
+#output {
+  text-align: center;
+  margin-top: 20px;
+}
+body {
+  background: linear-gradient(to right, #3c7087, #203a43, #193440);
+  color: #fff;
+}
+.form__input {
+  font-family: cursive;
+  color: #333;
+  font-size: 16px;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.5s;
+  display: block;
+  margin: auto;
+  width: auto;
+  height: auto;
+}
+.button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 12px;
+  border: none;
+  color: #0e0e0e;
+  background: linear-gradient(180deg, #6088c4 0%, #fcfdff 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: auto;
+  width: 120px;
+  height: 30px;
+}
+.button:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+/* ตาจะบอด
+body{
+  background-color: red;
+  animation-name: blind;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes blind{
+  0% {background-color:red;}
+  25% {background-color:blue;}
+  50% {background-color:green;}
+  75% {background-color:red;}
+}*/
+
+/*ตัวขยับ*/
+/*.animation{
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0%   {background-color:red; left:150px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:250px; top:0px;}
+  75%  {background-color:green; left:300px; top:0px;}
+  100% {background-color:red; left:150px; top:0px;}
+}*/

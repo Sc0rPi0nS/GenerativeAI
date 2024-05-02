@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Generative AI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        h1{
+            text-align: center;
+            font-size: 300%;
+        }
+        #genai,#gen{
+            display: block;
+            margin: auto;
+            width: 600px;
+            height: 50px;
+
+        }
+        h4{
+            text-align: center;
+        }
+        #output{
+            text-align: center;
+            margin-top: 20px;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Generative AI</h1>
+    <input type="text" id="genai"><br>
+    <button id="gen" type="button" onclick=fetchDataAJax()>Click me!</button>
+    <h4>คำตอบ</h4>
+    <center>
+      <h2 id="menu"></h2>
+      <p id="cook"></p>
+      <p id="material"></p>
+    </center>
+
+
+<script>
+        function fetchDataAJax() {
+  const inputText = document.getElementById("genai").value;
+  
+
+  $.ajax({
+    url: "https://api.openai.com/v1/chat/completions",
+    type: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer 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"
+    },
+    data: JSON.stringify({
+      "model": "gpt-4",
+      "messages": [
+        {
+          "role": "system",
+          "content": `Tell the food menu recipe in Thai language . give respond is JSON format. exaple is { menu : "...", cook:"1,2,3..." , material: "1,2,3,..."}"`
+        }, 
+        {
+          "role": "user",
+          "content":  inputText
+        }
+      ],
+      "temperature": 0.7,
+      "max_tokens": 2000,
+      "top_p": 1
+    }),
+    success: function (data) {
+      const jsonData = JSON.parse(data.choices[0].message.content);
+      console.log(jsonData);
+      document.getElementById("menu").innerHTML = jsonData.menu;
+      document.getElementById("cook").innerHTML = jsonData.cook;
+      document.getElementById("material").innerHTML = jsonData.material;
+
+
+    },
+    error: function (error) {
+      console.error('Error:', error);
+    }
+  });
+}
+</script>
+
+
+</body>
+</html>
